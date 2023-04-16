@@ -1,0 +1,1224 @@
+object frmMain: TfrmMain
+  Left = 266
+  Height = 217
+  Top = 325
+  Width = 584
+  HorzScrollBar.Page = 583
+  VertScrollBar.Page = 216
+  ActiveControl = tbCharSpeed
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
+  Caption = 'Morse Machine'
+  ClientHeight = 217
+  ClientWidth = 584
+  KeyPreview = True
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnKeyPress = FormKeyPress
+  object Label2: TLabel
+    Left = 265
+    Height = 14
+    Top = 8
+    Width = 86
+    Caption = 'Character Speed:'
+    ParentColor = False
+    ParentFont = True
+  end
+  object Label3: TLabel
+    Left = 457
+    Height = 14
+    Top = 9
+    Width = 28
+    Caption = 'Pitch:'
+    ParentColor = False
+    ParentFont = True
+  end
+  object tbCharSpeed: TTrackBar
+    Left = 360
+    Height = 25
+    Hint = '20 wpm'
+    Width = 80
+    Frequency = 5
+    Max = 80
+    Min = 20
+    OnChange = SpeedChange
+    Position = 20
+    ScalePos = trBottom
+    TickMarks = tmTopLeft
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 3
+  end
+  object tbPitch: TTrackBar
+    Left = 494
+    Height = 25
+    Hint = '800 Hz'
+    Width = 80
+    Frequency = 100
+    Max = 1200
+    Min = 400
+    OnChange = PitchChange
+    PageSize = 50
+    Position = 800
+    ScalePos = trTop
+    TickMarks = tmTopLeft
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 4
+  end
+  object cbLetters: TCheckBox
+    Left = 10
+    Height = 13
+    Top = 9
+    Width = 52
+    Caption = 'Letters'
+    OnChange = CharsChange
+    ParentFont = True
+    TabOrder = 0
+  end
+  object cbNumbers: TCheckBox
+    Left = 82
+    Height = 13
+    Top = 9
+    Width = 62
+    Caption = 'Numbers'
+    OnChange = CharsChange
+    ParentFont = True
+    TabOrder = 1
+  end
+  object cbSymbols: TCheckBox
+    Left = 160
+    Height = 13
+    Top = 9
+    Width = 59
+    Caption = 'Symbols'
+    OnChange = CharsChange
+    ParentFont = True
+    TabOrder = 2
+  end
+  object Graph: TPanel
+    Left = 10
+    Height = 141
+    Top = 35
+    Width = 564
+    BevelOuter = bvLowered
+    ClientHeight = 141
+    ClientWidth = 564
+    TabOrder = 6
+    object lbQ: TLabel
+      Left = 2
+      Height = 17
+      Top = 124
+      Width = 12
+      Alignment = taCenter
+      AutoSize = False
+      Caption = 'Q'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Courier New'
+      Font.Pitch = fpFixed
+      Font.Style = [fsBold]
+      ParentColor = False
+    end
+    object lb7: TLabel
+      Left = 16
+      Height = 17
+      Top = 124
+      Width = 12
+      Alignment = taCenter
+      AutoSize = False
+      Caption = '7'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Courier New'
+      Font.Pitch = fpFixed
+      Font.Style = [fsBold]
+      ParentColor = False
+    end
+    object lbZ: TLabel
+      Left = 30
+      Height = 17
+      Top = 124
+      Width = 12
+      Alignment = taCenter
+      AutoSize = False
+      Caption = 'Z'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Courier New'
+      Font.Pitch = fpFixed
+      Font.Style = [fsBold]
+      ParentColor = False
+    end
+    object lbG: TLabel
+      Left = 44
+      Height = 17
+      Top = 124
+      Width = 12
+      Alignment = taCenter
+      AutoSize = False
+      Caption = 'G'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Courier New'
+      Font.Pitch = fpFixed
+      Font.Style = [fsBold]
+      ParentColor = False
+    end
+    object lb0: TLabel
+      Left = 58
+      Height = 17
+      Top = 124
+      Width = 12
+      Alignment = taCenter
+      AutoSize = False
+      Caption = '0'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Courier New'
+      Font.Pitch = fpFixed
+      Font.Style = [fsBold]
+      ParentColor = False
+    end
+    object lb9: TLabel
+      Left = 72
+      Height = 17
+      Top = 124
+      Width = 12
+      Alignment = taCenter
+      AutoSize = False
+      Caption = '9'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Courier New'
+      Font.Pitch = fpFixed
+      Font.Style = [fsBold]
+      ParentColor = False
+    end
+    object lb8: TLabel
+      Left = 86
+      Height = 17
+      Top = 124
+      Width = 12
+      Alignment = taCenter
+      AutoSize = False
+      Caption = '8'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Courier New'
+      Font.Pitch = fpFixed
+      Font.Style = [fsBold]
+      ParentColor = False
+    end
+    object lbO: TLabel
+      Left = 100
+      Height = 17
+      Top = 124
+      Width = 12
+      Alignment = taCenter
+      AutoSize = False
+      Caption = 'O'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Courier New'
+      Font.Pitch = fpFixed
+      Font.Style = [fsBold]
+      ParentColor = False
+    end
+    object lb1: TLabel
+      Left = 114
+      Height = 17
+      Top = 124
+      Width = 12
+      Alignment = taCenter
+      AutoSize = False
+      Caption = '1'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Courier New'
+      Font.Pitch = fpFixed
+      Font.Style = [fsBold]
+      ParentColor = False
+    end
+    object lbJ: TLabel
+      Left = 128
+      Height = 17
+      Top = 124
+      Width = 12
+      Alignment = taCenter
+      AutoSize = False
+      Caption = 'J'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Courier New'
+      Font.Pitch = fpFixed
+      Font.Style = [fsBold]
+      ParentColor = False
+    end
+    object lbP: TLabel
+      Left = 142
+      Height = 17
+      Top = 124
+      Width = 12
+      Alignment = taCenter
+      AutoSize = False
+      Caption = 'P'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Courier New'
+      Font.Pitch = fpFixed
+      Font.Style = [fsBold]
+      ParentColor = False
+    end
+    object lbW: TLabel
+      Left = 156
+      Height = 17
+      Top = 124
+      Width = 12
+      Alignment = taCenter
+      AutoSize = False
+      Caption = 'W'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Courier New'
+      Font.Pitch = fpFixed
+      Font.Style = [fsBold]
+      ParentColor = False
+    end
+    object lbdot: TLabel
+      Left = 170
+      Height = 17
+      Top = 124
+      Width = 12
+      Alignment = taCenter
+      AutoSize = False
+      Caption = '.'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Courier New'
+      Font.Pitch = fpFixed
+      Font.Style = [fsBold]
+      ParentColor = False
+    end
+    object lbL: TLabel
+      Left = 184
+      Height = 17
+      Top = 124
+      Width = 12
+      Alignment = taCenter
+      AutoSize = False
+      Caption = 'L'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Courier New'
+      Font.Pitch = fpFixed
+      Font.Style = [fsBold]
+      ParentColor = False
+    end
+    object lbR: TLabel
+      Left = 198
+      Height = 17
+      Top = 124
+      Width = 12
+      Alignment = taCenter
+      AutoSize = False
+      Caption = 'R'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Courier New'
+      Font.Pitch = fpFixed
+      Font.Style = [fsBold]
+      ParentColor = False
+    end
+    object lbA: TLabel
+      Left = 212
+      Height = 17
+      Top = 124
+      Width = 12
+      Alignment = taCenter
+      AutoSize = False
+      Caption = 'A'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Courier New'
+      Font.Pitch = fpFixed
+      Font.Style = [fsBold]
+      ParentColor = False
+    end
+    object lbM: TLabel
+      Left = 226
+      Height = 17
+      Top = 124
+      Width = 12
+      Alignment = taCenter
+      AutoSize = False
+      Caption = 'M'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Courier New'
+      Font.Pitch = fpFixed
+      Font.Style = [fsBold]
+      ParentColor = False
+    end
+    object lb6: TLabel
+      Left = 240
+      Height = 17
+      Top = 124
+      Width = 12
+      Alignment = taCenter
+      AutoSize = False
+      Caption = '6'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Courier New'
+      Font.Pitch = fpFixed
+      Font.Style = [fsBold]
+      ParentColor = False
+    end
+    object lbB: TLabel
+      Left = 254
+      Height = 17
+      Top = 124
+      Width = 12
+      Alignment = taCenter
+      AutoSize = False
+      Caption = 'B'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Courier New'
+      Font.Pitch = fpFixed
+      Font.Style = [fsBold]
+      ParentColor = False
+    end
+    object lbslash: TLabel
+      Left = 268
+      Height = 17
+      Top = 124
+      Width = 12
+      Alignment = taCenter
+      AutoSize = False
+      Caption = '/'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Courier New'
+      Font.Pitch = fpFixed
+      Font.Style = [fsBold]
+      ParentColor = False
+    end
+    object lbX: TLabel
+      Left = 282
+      Height = 17
+      Top = 124
+      Width = 12
+      Alignment = taCenter
+      AutoSize = False
+      Caption = 'X'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Courier New'
+      Font.Pitch = fpFixed
+      Font.Style = [fsBold]
+      ParentColor = False
+    end
+    object lbD: TLabel
+      Left = 296
+      Height = 17
+      Top = 124
+      Width = 12
+      Alignment = taCenter
+      AutoSize = False
+      Caption = 'D'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Courier New'
+      Font.Pitch = fpFixed
+      Font.Style = [fsBold]
+      ParentColor = False
+    end
+    object lbequal: TLabel
+      Left = 310
+      Height = 17
+      Top = 124
+      Width = 12
+      Alignment = taCenter
+      AutoSize = False
+      Caption = '='
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Courier New'
+      Font.Pitch = fpFixed
+      Font.Style = [fsBold]
+      ParentColor = False
+    end
+    object lbY: TLabel
+      Left = 324
+      Height = 17
+      Top = 124
+      Width = 12
+      Alignment = taCenter
+      AutoSize = False
+      Caption = 'Y'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Courier New'
+      Font.Pitch = fpFixed
+      Font.Style = [fsBold]
+      ParentColor = False
+    end
+    object lbC: TLabel
+      Left = 338
+      Height = 17
+      Top = 124
+      Width = 12
+      Alignment = taCenter
+      AutoSize = False
+      Caption = 'C'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Courier New'
+      Font.Pitch = fpFixed
+      Font.Style = [fsBold]
+      ParentColor = False
+    end
+    object lbK: TLabel
+      Left = 352
+      Height = 17
+      Top = 124
+      Width = 12
+      Alignment = taCenter
+      AutoSize = False
+      Caption = 'K'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Courier New'
+      Font.Pitch = fpFixed
+      Font.Style = [fsBold]
+      ParentColor = False
+    end
+    object lbN: TLabel
+      Left = 366
+      Height = 17
+      Top = 124
+      Width = 12
+      Alignment = taCenter
+      AutoSize = False
+      Caption = 'N'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Courier New'
+      Font.Pitch = fpFixed
+      Font.Style = [fsBold]
+      ParentColor = False
+    end
+    object lb2: TLabel
+      Left = 380
+      Height = 17
+      Top = 124
+      Width = 12
+      Alignment = taCenter
+      AutoSize = False
+      Caption = '2'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Courier New'
+      Font.Pitch = fpFixed
+      Font.Style = [fsBold]
+      ParentColor = False
+    end
+    object lb3: TLabel
+      Left = 394
+      Height = 17
+      Top = 124
+      Width = 12
+      Alignment = taCenter
+      AutoSize = False
+      Caption = '3'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Courier New'
+      Font.Pitch = fpFixed
+      Font.Style = [fsBold]
+      ParentColor = False
+    end
+    object lbquest: TLabel
+      Left = 408
+      Height = 17
+      Top = 124
+      Width = 12
+      Alignment = taCenter
+      AutoSize = False
+      Caption = '?'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Courier New'
+      Font.Pitch = fpFixed
+      Font.Style = [fsBold]
+      ParentColor = False
+    end
+    object lbF: TLabel
+      Left = 422
+      Height = 17
+      Top = 124
+      Width = 12
+      Alignment = taCenter
+      AutoSize = False
+      Caption = 'F'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Courier New'
+      Font.Pitch = fpFixed
+      Font.Style = [fsBold]
+      ParentColor = False
+    end
+    object lbU: TLabel
+      Left = 436
+      Height = 17
+      Top = 124
+      Width = 12
+      Alignment = taCenter
+      AutoSize = False
+      Caption = 'U'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Courier New'
+      Font.Pitch = fpFixed
+      Font.Style = [fsBold]
+      ParentColor = False
+    end
+    object lb4: TLabel
+      Left = 450
+      Height = 17
+      Top = 124
+      Width = 12
+      Alignment = taCenter
+      AutoSize = False
+      Caption = '4'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Courier New'
+      Font.Pitch = fpFixed
+      Font.Style = [fsBold]
+      ParentColor = False
+    end
+    object lb5: TLabel
+      Left = 464
+      Height = 17
+      Top = 124
+      Width = 12
+      Alignment = taCenter
+      AutoSize = False
+      Caption = '5'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Courier New'
+      Font.Pitch = fpFixed
+      Font.Style = [fsBold]
+      ParentColor = False
+    end
+    object lbV: TLabel
+      Left = 478
+      Height = 17
+      Top = 124
+      Width = 12
+      Alignment = taCenter
+      AutoSize = False
+      Caption = 'V'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Courier New'
+      Font.Pitch = fpFixed
+      Font.Style = [fsBold]
+      ParentColor = False
+    end
+    object lbH: TLabel
+      Left = 492
+      Height = 17
+      Top = 124
+      Width = 12
+      Alignment = taCenter
+      AutoSize = False
+      Caption = 'H'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Courier New'
+      Font.Pitch = fpFixed
+      Font.Style = [fsBold]
+      ParentColor = False
+    end
+    object lbS: TLabel
+      Left = 506
+      Height = 17
+      Top = 124
+      Width = 12
+      Alignment = taCenter
+      AutoSize = False
+      Caption = 'S'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Courier New'
+      Font.Pitch = fpFixed
+      Font.Style = [fsBold]
+      ParentColor = False
+    end
+    object lbI: TLabel
+      Left = 520
+      Height = 17
+      Top = 124
+      Width = 12
+      Alignment = taCenter
+      AutoSize = False
+      Caption = 'I'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Courier New'
+      Font.Pitch = fpFixed
+      Font.Style = [fsBold]
+      ParentColor = False
+    end
+    object lbT: TLabel
+      Left = 534
+      Height = 17
+      Top = 124
+      Width = 12
+      Alignment = taCenter
+      AutoSize = False
+      Caption = 'T'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Courier New'
+      Font.Pitch = fpFixed
+      Font.Style = [fsBold]
+      ParentColor = False
+    end
+    object lbE: TLabel
+      Left = 548
+      Height = 17
+      Top = 124
+      Width = 12
+      Alignment = taCenter
+      AutoSize = False
+      Caption = 'E'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Courier New'
+      Font.Pitch = fpFixed
+      Font.Style = [fsBold]
+      ParentColor = False
+    end
+    object pbQ: TProgressBar
+      Left = 2
+      Height = 120
+      Top = 2
+      Width = 12
+      Max = 255
+      Orientation = pbVertical
+      Position = 100
+      Smooth = True
+      Step = 1
+    end
+    object pb7: TProgressBar
+      Left = 16
+      Height = 120
+      Top = 2
+      Width = 12
+      Max = 255
+      Orientation = pbVertical
+      Position = 100
+      Smooth = True
+      Step = 1
+    end
+    object pbZ: TProgressBar
+      Left = 30
+      Height = 120
+      Top = 2
+      Width = 12
+      Max = 255
+      Orientation = pbVertical
+      Position = 100
+      Smooth = True
+      Step = 1
+    end
+    object pbG: TProgressBar
+      Left = 44
+      Height = 120
+      Top = 2
+      Width = 12
+      Max = 255
+      Orientation = pbVertical
+      Position = 100
+      Smooth = True
+      Step = 1
+    end
+    object pb0: TProgressBar
+      Left = 58
+      Height = 120
+      Top = 2
+      Width = 12
+      Max = 255
+      Orientation = pbVertical
+      Position = 100
+      Smooth = True
+      Step = 1
+    end
+    object pb9: TProgressBar
+      Left = 72
+      Height = 120
+      Top = 2
+      Width = 12
+      Max = 255
+      Orientation = pbVertical
+      Position = 100
+      Smooth = True
+      Step = 1
+    end
+    object pb8: TProgressBar
+      Left = 86
+      Height = 120
+      Top = 2
+      Width = 12
+      Max = 255
+      Orientation = pbVertical
+      Position = 100
+      Smooth = True
+      Step = 1
+    end
+    object pbO: TProgressBar
+      Left = 100
+      Height = 120
+      Top = 2
+      Width = 12
+      Max = 255
+      Orientation = pbVertical
+      Position = 100
+      Smooth = True
+      Step = 1
+    end
+    object pb1: TProgressBar
+      Left = 114
+      Height = 120
+      Top = 2
+      Width = 12
+      Max = 255
+      Orientation = pbVertical
+      Position = 100
+      Smooth = True
+      Step = 1
+    end
+    object pbJ: TProgressBar
+      Left = 128
+      Height = 120
+      Top = 2
+      Width = 12
+      Max = 255
+      Orientation = pbVertical
+      Position = 100
+      Smooth = True
+      Step = 1
+    end
+    object pbP: TProgressBar
+      Left = 142
+      Height = 120
+      Top = 2
+      Width = 12
+      Max = 255
+      Orientation = pbVertical
+      Position = 100
+      Smooth = True
+      Step = 1
+    end
+    object pbW: TProgressBar
+      Left = 156
+      Height = 120
+      Top = 2
+      Width = 12
+      Max = 255
+      Orientation = pbVertical
+      Position = 100
+      Smooth = True
+      Step = 1
+    end
+    object pbdot: TProgressBar
+      Left = 170
+      Height = 120
+      Top = 2
+      Width = 12
+      Max = 255
+      Orientation = pbVertical
+      Position = 100
+      Smooth = True
+      Step = 1
+    end
+    object pbL: TProgressBar
+      Left = 184
+      Height = 120
+      Top = 2
+      Width = 12
+      Max = 255
+      Orientation = pbVertical
+      Position = 100
+      Smooth = True
+      Step = 1
+    end
+    object pbR: TProgressBar
+      Left = 198
+      Height = 120
+      Top = 2
+      Width = 12
+      Max = 255
+      Orientation = pbVertical
+      Position = 100
+      Smooth = True
+      Step = 1
+    end
+    object pbA: TProgressBar
+      Left = 212
+      Height = 120
+      Top = 2
+      Width = 12
+      Max = 255
+      Orientation = pbVertical
+      Position = 100
+      Smooth = True
+      Step = 1
+    end
+    object pbM: TProgressBar
+      Left = 226
+      Height = 120
+      Top = 2
+      Width = 12
+      Max = 255
+      Orientation = pbVertical
+      Position = 100
+      Smooth = True
+      Step = 1
+    end
+    object pb6: TProgressBar
+      Left = 240
+      Height = 120
+      Top = 2
+      Width = 12
+      Max = 255
+      Orientation = pbVertical
+      Position = 100
+      Smooth = True
+      Step = 1
+    end
+    object pbB: TProgressBar
+      Left = 254
+      Height = 120
+      Top = 2
+      Width = 12
+      Max = 255
+      Orientation = pbVertical
+      Position = 100
+      Smooth = True
+      Step = 1
+    end
+    object pbslash: TProgressBar
+      Left = 268
+      Height = 120
+      Top = 2
+      Width = 12
+      Max = 255
+      Orientation = pbVertical
+      Position = 100
+      Smooth = True
+      Step = 1
+    end
+    object pbX: TProgressBar
+      Left = 282
+      Height = 120
+      Top = 2
+      Width = 12
+      Max = 255
+      Orientation = pbVertical
+      Position = 100
+      Smooth = True
+      Step = 1
+    end
+    object pbD: TProgressBar
+      Left = 296
+      Height = 120
+      Top = 2
+      Width = 12
+      Max = 255
+      Orientation = pbVertical
+      Position = 100
+      Smooth = True
+      Step = 1
+    end
+    object pbequal: TProgressBar
+      Left = 310
+      Height = 120
+      Top = 2
+      Width = 12
+      Max = 255
+      Orientation = pbVertical
+      Position = 100
+      Smooth = True
+      Step = 1
+    end
+    object pbY: TProgressBar
+      Left = 324
+      Height = 120
+      Top = 2
+      Width = 12
+      Max = 255
+      Orientation = pbVertical
+      Position = 100
+      Smooth = True
+      Step = 1
+    end
+    object pbC: TProgressBar
+      Left = 338
+      Height = 120
+      Top = 2
+      Width = 12
+      Max = 255
+      Orientation = pbVertical
+      Position = 100
+      Smooth = True
+      Step = 1
+    end
+    object pbK: TProgressBar
+      Left = 352
+      Height = 120
+      Top = 2
+      Width = 12
+      Max = 255
+      Orientation = pbVertical
+      Position = 100
+      Smooth = True
+      Step = 1
+    end
+    object pbN: TProgressBar
+      Left = 366
+      Height = 120
+      Top = 2
+      Width = 12
+      Max = 255
+      Orientation = pbVertical
+      Position = 100
+      Smooth = True
+      Step = 1
+    end
+    object pb2: TProgressBar
+      Left = 380
+      Height = 120
+      Top = 2
+      Width = 12
+      Max = 255
+      Orientation = pbVertical
+      Position = 100
+      Smooth = True
+      Step = 1
+    end
+    object pb3: TProgressBar
+      Left = 394
+      Height = 120
+      Top = 2
+      Width = 12
+      Max = 255
+      Orientation = pbVertical
+      Position = 100
+      Smooth = True
+      Step = 1
+    end
+    object pbquest: TProgressBar
+      Left = 408
+      Height = 120
+      Top = 2
+      Width = 12
+      Max = 255
+      Orientation = pbVertical
+      Position = 100
+      Smooth = True
+      Step = 1
+    end
+    object pbF: TProgressBar
+      Left = 422
+      Height = 120
+      Top = 2
+      Width = 12
+      Max = 255
+      Orientation = pbVertical
+      Position = 100
+      Smooth = True
+      Step = 1
+    end
+    object pbU: TProgressBar
+      Left = 436
+      Height = 120
+      Top = 2
+      Width = 12
+      Max = 255
+      Orientation = pbVertical
+      Position = 100
+      Smooth = True
+      Step = 1
+    end
+    object pb4: TProgressBar
+      Left = 450
+      Height = 120
+      Top = 2
+      Width = 12
+      Max = 255
+      Orientation = pbVertical
+      Position = 100
+      Smooth = True
+      Step = 1
+    end
+    object pb5: TProgressBar
+      Left = 464
+      Height = 120
+      Top = 2
+      Width = 12
+      Max = 255
+      Orientation = pbVertical
+      Position = 100
+      Smooth = True
+      Step = 1
+    end
+    object pbV: TProgressBar
+      Left = 478
+      Height = 120
+      Top = 2
+      Width = 12
+      Max = 255
+      Orientation = pbVertical
+      Position = 100
+      Smooth = True
+      Step = 1
+    end
+    object pbH: TProgressBar
+      Left = 492
+      Height = 120
+      Top = 2
+      Width = 12
+      Max = 255
+      Orientation = pbVertical
+      Position = 100
+      Smooth = True
+      Step = 1
+    end
+    object pbS: TProgressBar
+      Left = 506
+      Height = 120
+      Top = 2
+      Width = 12
+      Max = 255
+      Orientation = pbVertical
+      Position = 100
+      Smooth = True
+      Step = 1
+    end
+    object pbI: TProgressBar
+      Left = 520
+      Height = 120
+      Top = 2
+      Width = 12
+      Max = 255
+      Orientation = pbVertical
+      Position = 100
+      Smooth = True
+      Step = 1
+    end
+    object pbT: TProgressBar
+      Left = 534
+      Height = 120
+      Top = 2
+      Width = 12
+      Max = 255
+      Orientation = pbVertical
+      Position = 100
+      Smooth = True
+      Step = 1
+    end
+    object pbE: TProgressBar
+      Left = 548
+      Height = 120
+      Top = 2
+      Width = 12
+      Max = 255
+      Orientation = pbVertical
+      Position = 100
+      Smooth = True
+      Step = 1
+    end
+  end
+  object Sent: TPanel
+    Left = 8
+    Height = 25
+    Top = 183
+    Width = 474
+    Alignment = taLeftJustify
+    BevelOuter = bvLowered
+    Caption = 'Morse Machine 1.0 Copyright © 2007 Tech-Pro.net'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Courier New'
+    Font.Pitch = fpFixed
+    Font.Style = [fsBold]
+    TabOrder = 7
+  end
+  object Control: TButton
+    Left = 499
+    Height = 25
+    Top = 183
+    Width = 75
+    BorderSpacing.InnerBorder = 4
+    Caption = 'Start'
+    Default = True
+    OnClick = ControlClick
+    ParentFont = True
+    TabOrder = 5
+  end
+  object Timer: TTimer
+    Enabled = False
+    Interval = 100
+    OnTimer = TimerTimer
+    left = 317
+    top = 187
+  end
+end
