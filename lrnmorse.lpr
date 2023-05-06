@@ -14,9 +14,10 @@ uses
   Forms
   { add your units here }, main;
 
-{$R *.RES}
+{$R *.res}
 
 begin
+  Application.Title:='';
   Application.Initialize;
   Application.CreateForm(TfrmMain, frmMain);
   Application.Run;

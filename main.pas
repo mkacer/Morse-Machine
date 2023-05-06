@@ -260,7 +260,7 @@ begin
   end;
 
   // try and open the wave device for our format of wave data
-  open_status := waveOutOpen(@hWave_out, WAVE_MAPPER, @pcm, DWORD(@WaveOutPrc), Integer(Self), CALLBACK_FUNCTION);
+  open_status := waveOutOpen(@hWave_out, WAVE_MAPPER, @pcm, DWORD(@WaveOutPrc), QWORD(Self), CALLBACK_FUNCTION);
   if open_status <> MMSYSERR_NOERROR then
   begin
     hWave_out := 0;
