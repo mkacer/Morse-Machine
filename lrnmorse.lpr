@@ -4,7 +4,7 @@ program lrnmorse;
     Released under the GNU General Public License Version 2
     (see http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt)      *)
 
-{$mode objfpc}{$H+}
+{$mode objfpc}{$H+}{$codepage utf8}
 
 uses
   {$IFDEF UNIX}{$IFDEF UseCThreads}
@@ -12,12 +12,13 @@ uses
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
   Forms
-  { add your units here }, main;
+  { add your units here }, main, config, codechars, mmErrMsg;
 
 {$R *.res}
 
 begin
-  Application.Title:='';
+  Application.Scaled:=True;
+  Application.Title:='Morse Machine';
   Application.Initialize;
   Application.CreateForm(TfrmMain, frmMain);
   Application.Run;

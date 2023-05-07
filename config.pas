@@ -1,110 +1,112 @@
-unit config;
 
-{$mode objfpc}{$H+}
+Unit config;
 
-interface
+{$mode objfpc}{$H+}{$codepage utf8}
 
-uses
-  Forms, Controls, Classes, SysUtils, XMLCfg;
-  
-procedure SetConfigFileName( const filename: string );
-function GetValueFromConfigFile(const SectionName, ValueName, Default: string): string;
-function GetValueFromConfigFile(const SectionName, ValueName: string; Default: Integer): Integer;
-function GetValueFromConfigFile(const SectionName, ValueName: string; Default: Boolean): Boolean;
-procedure SaveValueToConfigFile(const SectionName, ValueName, Value: string);
-procedure SaveValueToConfigFile(const SectionName, ValueName: string; Value: Integer);
-procedure SaveValueToConfigFile(const SectionName, ValueName: string; Value: Boolean);
-procedure GetFormPositionFromConfigFile(const SectionName, ValueName: string; AForm: TForm);
-procedure WriteFormPositionToConfigFile(const SectionName, ValueName: string; AForm: TForm);
+Interface
 
-implementation
+Uses 
+Forms, Controls, Classes, SysUtils, XMLConf;
 
-var
+Procedure SetConfigFileName( Const filename: String );
+Function GetValueFromConfigFile(Const SectionName, ValueName, Default: UnicodeString): UnicodeString;
+Function GetValueFromConfigFile(Const SectionName, ValueName: UnicodeString; Default: Integer): Integer;
+Function GetValueFromConfigFile(Const SectionName, ValueName: UnicodeString; Default: Boolean): Boolean;
+Procedure SaveValueToConfigFile(Const SectionName, ValueName, Value: UnicodeString);
+Procedure SaveValueToConfigFile(Const SectionName, ValueName: UnicodeString; Value: Integer);
+Procedure SaveValueToConfigFile(Const SectionName, ValueName: UnicodeString; Value: Boolean);
+Procedure GetFormPositionFromConfigFile(Const SectionName, ValueName: UnicodeString; AForm: TForm);
+Procedure WriteFormPositionToConfigFile(Const SectionName, ValueName: UnicodeString; AForm: TForm);
+
+Implementation
+
+Var 
   XMLConfig: TXMLConfig;
 
-const
+Const 
   sValue = '/Value';
-  
-procedure SetConfigFileName( const filename: string );
-begin
-  XMLConfig := TXMLConfig.Create(nil);
+
+Procedure SetConfigFileName( Const filename: String );
+Begin
+  XMLConfig := TXMLConfig.Create(Nil);
   XMLConfig.Filename := filename;
-end;
-  
-function GetValueFromConfigFile(const SectionName, ValueName, Default: string): string;
-begin
+End;
+
+Function GetValueFromConfigFile(Const SectionName, ValueName, Default: UnicodeString): UnicodeString;
+Begin
   Result := XMLConfig.GetValue(SectionName+'/'+ValueName+sValue, Default);
-end;
+End;
 
-function GetValueFromConfigFile(const SectionName, ValueName: string; Default: Integer): Integer;
-begin
+Function GetValueFromConfigFile(Const SectionName, ValueName: UnicodeString; Default: Integer): Integer;
+Begin
   Result := XMLConfig.GetValue(SectionName+'/'+ValueName+sValue, Default);
-end;
+End;
 
-function GetValueFromConfigFile(const SectionName, ValueName: string; Default: Boolean): Boolean;
-begin
+Function GetValueFromConfigFile(Const SectionName, ValueName: UnicodeString; Default: Boolean): Boolean;
+Begin
   Result := XMLConfig.GetValue(SectionName+'/'+ValueName+sValue, Default);
-end;
+End;
 
-procedure SaveValueToConfigFile(const SectionName, ValueName, Value: string);
-begin
+Procedure SaveValueToConfigFile(Const SectionName, ValueName, Value: UnicodeString);
+Begin
   XMLConfig.SetValue(SectionName+'/'+ValueName+sValue, Value);
-end;
+End;
 
-procedure SaveValueToConfigFile(const SectionName, ValueName: string; Value: Integer);
-begin
+Procedure SaveValueToConfigFile(Const SectionName, ValueName: UnicodeString; Value: Integer);
+Begin
   XMLConfig.SetValue(SectionName+'/'+ValueName+sValue, Value);
-end;
+End;
 
-procedure SaveValueToConfigFile(const SectionName, ValueName: string; Value: Boolean);
-begin
+Procedure SaveValueToConfigFile(Const SectionName, ValueName: UnicodeString; Value: Boolean);
+Begin
   XMLConfig.SetValue(SectionName+'/'+ValueName+sValue, Value);
-end;
+End;
 
-procedure GetFormPositionFromConfigFile(const SectionName, ValueName: string; AForm: TForm);
-var
+Procedure GetFormPositionFromConfigFile(Const SectionName, ValueName: UnicodeString; AForm: TForm);
+
+Var 
   ws: TWindowState;
   t, l, w: Integer;
-begin
+Begin
   ws := TWindowState(XMLConfig.GetValue(SectionName+'/'+ValueName+'/WindowState',Ord(wsNormal)));
   t := XMLConfig.GetValue(SectionName+'/'+ValueName+'/Top',AForm.Top);
   l := XMLConfig.GetValue(SectionName+'/'+ValueName+'/Left',AForm.Left);
-  if t < Screen.Height then AForm.Top := t;
-  if l < Screen.Width then AForm.Left := l;
-  if AForm.BorderStyle = bsSizeable then
-  begin
-    w := XMLConfig.GetValue(SectionName+'/'+ValueName+'/Width',AForm.Width);
-    if w > 40 then AForm.Width := w;
-    AForm.Height := XMLConfig.GetValue(SectionName+'/'+ValueName+'/Height',AForm.Height);;
-  end;
+  If t < Screen.Height Then AForm.Top := t;
+  If l < Screen.Width Then AForm.Left := l;
+  If AForm.BorderStyle = bsSizeable Then
+    Begin
+      w := XMLConfig.GetValue(SectionName+'/'+ValueName+'/Width',AForm.Width);
+      If w > 40 Then AForm.Width := w;
+      AForm.Height := XMLConfig.GetValue(SectionName+'/'+ValueName+'/Height',AForm.Height);;
+    End;
   Application.ProcessMessages;
-	if ws = wsMaximized then AForm.WindowState := ws;
-end;
-  
-procedure WriteFormPositionToConfigFile(const SectionName, ValueName: string; AForm: TForm);
-var
+  If ws = wsMaximized Then AForm.WindowState := ws;
+End;
+
+Procedure WriteFormPositionToConfigFile(Const SectionName, ValueName: UnicodeString; AForm: TForm);
+
+Var 
   ws: TWindowState;
-begin
+Begin
   ws := AForm.WindowState;
-  if ws = wsNormal then
-  begin
-    XMLConfig.SetValue(SectionName+'/'+ValueName+'/Top',AForm.Top);
-    XMLConfig.SetValue(SectionName+'/'+ValueName+'/Left',AForm.Left);
-    if AForm.BorderStyle = bsSizeable then
-    begin
-      XMLConfig.SetValue(SectionName+'/'+ValueName+'/Width',AForm.Width);
-      XMLConfig.SetValue(SectionName+'/'+ValueName+'/Height',AForm.Height);
-    end;
-  end;
+  If ws = wsNormal Then
+    Begin
+      XMLConfig.SetValue(SectionName+'/'+ValueName+'/Top',AForm.Top);
+      XMLConfig.SetValue(SectionName+'/'+ValueName+'/Left',AForm.Left);
+      If AForm.BorderStyle = bsSizeable Then
+        Begin
+          XMLConfig.SetValue(SectionName+'/'+ValueName+'/Width',AForm.Width);
+          XMLConfig.SetValue(SectionName+'/'+ValueName+'/Height',AForm.Height);
+        End;
+    End;
   XMLConfig.SetValue(SectionName+'/'+ValueName+'/WindowState',Ord(ws));
-end;
+End;
 
 initialization
-  XMLConfig := nil;
+XMLConfig := Nil;
 
 finalization
-  if XMLConfig <> nil then
-    XMLConfig.Destroy;
+If XMLConfig <> Nil Then
+  XMLConfig.Destroy;
 
-end.
-
+End.

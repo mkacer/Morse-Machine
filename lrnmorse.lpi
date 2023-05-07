@@ -2,9 +2,59 @@
 <CONFIG>
   <ProjectOptions>
     <Version Value="12"/>
-    <BuildModes>
-      <Item Name="default" Default="True"/>
+    <General>
+      <Title Value="Morse Machine"/>
+      <Scaled Value="True"/>
+      <UseXPManifest Value="True"/>
+      <XPManifest>
+        <DpiAware Value="True"/>
+        <LongPathAware Value="True"/>
+        <AnsiUTF8 Value="True"/>
+        <TextName Value="Morse Machine"/>
+        <TextDesc Value="A Fully Automatic Morse Code Teaching Machine"/>
+      </XPManifest>
+    </General>
+    <VersionInfo>
+      <UseVersionInfo Value="True"/>
+      <AutoIncrementBuild Value="True"/>
+      <MajorVersionNr Value="1"/>
+      <MinorVersionNr Value="1"/>
+      <BuildNr Value="36"/>
+      <CharSet Value="04B0"/>
+      <Attributes pvaPreRelease="True"/>
+    </VersionInfo>
+    <BuildModes Active="Release">
+      <Item Name="Debug" Default="True"/>
+      <Item Name="Release">
+        <CompilerOptions>
+          <Version Value="11"/>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+          </SearchPaths>
+          <CodeGeneration>
+            <SmartLinkUnit Value="True"/>
+            <TargetCPU Value="i386"/>
+            <TargetOS Value="win32"/>
+            <Optimizations>
+              <OptimizationLevel Value="3"/>
+            </Optimizations>
+            <SmallerCode Value="True"/>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <GenerateDebugInfo Value="False"/>
+            </Debugging>
+            <LinkSmart Value="True"/>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+        </CompilerOptions>
+      </Item>
     </BuildModes>
+    <ManyBuildModesSelection Value="Debug,Release"/>
     <PublishOptions>
       <Version Value="2"/>
     </PublishOptions>
@@ -20,12 +70,10 @@
       <Unit>
         <Filename Value="lrnmorse.lpr"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="2"/>
-        <TopLine Value="7"/>
-        <CursorPos X="59" Y="16"/>
-        <UsageCount Value="34"/>
+        <EditorIndex Value="1"/>
+        <CursorPos X="61" Y="15"/>
+        <UsageCount Value="46"/>
         <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="main.pas"/>
@@ -34,27 +82,183 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
-        <CursorPos X="3" Y="16"/>
-        <UsageCount Value="34"/>
+        <CursorPos X="15" Y="10"/>
+        <UsageCount Value="46"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="codechars.pas"/>
-        <EditorIndex Value="1"/>
-        <CursorPos Y="6"/>
-        <UsageCount Value="15"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="3"/>
+        <CursorPos X="20" Y="8"/>
+        <UsageCount Value="24"/>
         <Loaded Value="True"/>
       </Unit>
+      <Unit>
+        <Filename Value="config.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="4"/>
+        <CursorPos X="20" Y="4"/>
+        <UsageCount Value="24"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../../../../../lazarus/fpc/3.2.2/source/packages/fcl-xml/src/xmlcfg.pp"/>
+        <UnitName Value="XMLCfg"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../../../../../lazarus/fpc/3.2.2/source/packages/fcl-xml/src/xmlconf.pp"/>
+        <UnitName Value="XMLConf"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="148"/>
+        <UsageCount Value="9"/>
+      </Unit>
+      <Unit>
+        <Filename Value="code.pas"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="53" Y="5"/>
+        <UsageCount Value="20"/>
+      </Unit>
+      <Unit>
+        <Filename Value="mmErrMsg.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="2"/>
+        <CursorPos Y="5"/>
+        <UsageCount Value="24"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../../../../../lazarus/lcl/extctrls.pp"/>
+        <UnitName Value="ExtCtrls"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1106"/>
+        <CursorPos X="14" Y="1124"/>
+        <UsageCount Value="10"/>
+      </Unit>
     </Units>
-    <JumpHistory HistoryIndex="1">
+    <JumpHistory HistoryIndex="29">
       <Position>
         <Filename Value="main.pas"/>
-        <Caret Line="263" Column="86" TopLine="254"/>
+        <Caret Line="419" Column="31" TopLine="402"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="425" Column="19" TopLine="408"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="426" Column="25" TopLine="409"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="429" Column="31" TopLine="412"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="431" Column="24" TopLine="414"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="491" Column="20" TopLine="473"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="510" Column="35" TopLine="492"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="515" Column="35" TopLine="497"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="517" Column="20" TopLine="499"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="540" Column="44" TopLine="523"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="199" Column="25" TopLine="188"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="488" Column="13" TopLine="480"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="351" Column="49" TopLine="342"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="352" Column="31" TopLine="342"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="353" Column="33" TopLine="342"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="474" Column="53" TopLine="456"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="475" Column="35" TopLine="457"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="476" Column="37" TopLine="458"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="200" Column="14" TopLine="189"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="352" Column="60" TopLine="341"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="475" Column="25" TopLine="465"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="287" Column="81" TopLine="278"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="475" Column="58" TopLine="466"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="287" Column="61" TopLine="278"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="510" Column="16" TopLine="501"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="608" Column="34" TopLine="599"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="287" Column="61" TopLine="277"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="146" Column="64" TopLine="137"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="510" Column="16" TopLine="501"/>
       </Position>
       <Position>
         <Filename Value="lrnmorse.lpr"/>
-        <Caret Line="16" Column="59" TopLine="7"/>
+        <Caret Line="7" Column="36"/>
       </Position>
     </JumpHistory>
   </ProjectOptions>
@@ -63,5 +267,38 @@
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
     </SearchPaths>
+    <Parsing>
+      <SyntaxOptions>
+        <IncludeAssertionCode Value="True"/>
+      </SyntaxOptions>
+    </Parsing>
+    <CodeGeneration>
+      <Checks>
+        <IOChecks Value="True"/>
+        <RangeChecks Value="True"/>
+        <OverflowChecks Value="True"/>
+        <StackChecks Value="True"/>
+      </Checks>
+      <VerifyObjMethodCallValidity Value="True"/>
+      <TargetProcessor Value="pentiumm"/>
+      <TargetCPU Value="i386"/>
+      <TargetOS Value="win32"/>
+      <Optimizations>
+        <OptimizationLevel Value="0"/>
+      </Optimizations>
+    </CodeGeneration>
+    <Linking>
+      <Debugging>
+        <DebugInfoType Value="dsDwarf3"/>
+        <UseHeaptrc Value="True"/>
+        <TrashVariables Value="True"/>
+        <UseExternalDbgSyms Value="True"/>
+      </Debugging>
+      <Options>
+        <Win32>
+          <GraphicApplication Value="True"/>
+        </Win32>
+      </Options>
+    </Linking>
   </CompilerOptions>
 </CONFIG>
