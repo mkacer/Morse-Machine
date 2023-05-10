@@ -204,7 +204,7 @@ var
 
 function Rand: integer;
   begin
-    Rand := Trunc(Random * 32768.0);
+    Result := Trunc(Random * 32768.0);
   end;
 
 procedure waveOutPrc(hwo: HWAVEOUT; uMsg: UINT; dwInstance, dwParam1, dwParam2: DWORD);
@@ -281,8 +281,8 @@ procedure TfrmMain.FormCreate(Sender: TObject);
       end;
 
     // try and open the wave device for our format of wave data
-    open_status := waveOutOpen(@hWave_out, WAVE_MAPPER, @pcm, DWORD(@WaveOutPrc),
-      DWORD(@Self), CALLBACK_FUNCTION);
+    open_status := waveOutOpen(@hWave_out, WAVE_MAPPER, @pcm, qword(@WaveOutPrc),
+      qword(@Self), CALLBACK_FUNCTION);
     if open_status <> MMSYSERR_NOERROR then
       begin
       hWave_out := 0;

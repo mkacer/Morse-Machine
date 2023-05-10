@@ -9,7 +9,7 @@ program mmachine;
 uses
  {$IFDEF UNIX}{$IFDEF UseCThreads}
   cthreads,
-       {$ENDIF}     {$ENDIF}
+        {$ENDIF}      {$ENDIF}
   Interfaces, // this includes the LCL
   Forms { add your units here },
   main,

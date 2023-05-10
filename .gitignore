@@ -159,3 +159,6 @@ fp.cfg
 fp.dsk
 
 # End of https://mrkandreev.name/snippets/gitignore-generator/#Linux,Emacs,macOS,Lazarus,Windows,FreePascal
+
+*.ini
+*.obj

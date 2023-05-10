@@ -34,8 +34,8 @@ procedure SetConfigFileName(const filename: string);
     XMLConfig.Filename := filename;
   end;
 
-function GetValueFromConfigFile(const SectionName, ValueName, Default: unicodestring):
-unicodestring;
+function GetValueFromConfigFile(
+  const SectionName, ValueName, Default: unicodestring): unicodestring;
   begin
     Result := XMLConfig.GetValue(SectionName + '/' + ValueName + sValue, Default);
   end;
