@@ -39,7 +39,7 @@ type
 
   { TfrmMain }
 
-  TfrmMain = class(TForm)
+  TfrmMain = class (TForm)
     Control: TButton;
     cbLetters: TCheckBox;
     Graph:   TPanel;
@@ -181,7 +181,7 @@ implementation
 { TfrmMain }
 
 uses
-  config, codechars;
+  codechars, config;
 
 const
   sConfigRoot = 'Settings';
@@ -281,12 +281,12 @@ procedure TfrmMain.FormCreate(Sender: TObject);
       end;
 
     // try and open the wave device for our format of wave data
-    open_status := waveOutOpen(@hWave_out, WAVE_MAPPER, @pcm, qword(@WaveOutPrc),
-      qword(@Self), CALLBACK_FUNCTION);
+    open_status := waveOutOpen(@hWave_out, WAVE_MAPPER, @pcm, qword(@WaveOutPrc), qword(@Self), CALLBACK_FUNCTION);
     if open_status <> MMSYSERR_NOERROR then
       begin
       hWave_out := 0;
-      MessageDlg(open_error + #13#10 + translate_mm_error(open_status), mtWarning, [mbOK], 0);
+      MessageDlg(open_error + #13#10 + translate_mm_error(open_status),
+        mtWarning, [mbOK], 0);
       end;
 
   end;
@@ -593,11 +593,9 @@ procedure TfrmMain.Send(ch: char);
 procedure TfrmMain.StopSending;
   begin
     if key_down then
-      begin
       repeat
         Application.ProcessMessages;
       until not key_down;
-      end;
   end;
 
 procedure TfrmMain.WaveOutProc(hwo: HWAVEOUT; uMsg: UINT; dwParam1, dwParam2: DWORD);
@@ -639,7 +637,7 @@ procedure TfrmMain.do_sine_table;
     for i := 0 to sine_table_samples - 1 do
       begin
       y := round(32767.0 * sin(2.0 * i * Pi / sine_table_samples));
-      sine_table^ [i] := round(y);
+      sine_table^[i] := round(y);
       end;
   end;
 
@@ -668,8 +666,8 @@ procedure TfrmMain.fill_buffer_with_sinewave(bfr: pBuffer; var index, samples: i
           sample := (sample * 8) div 9;
       if i > (samples - 32) then
         for j := samples - 32 to i do
-          sample   := (sample * 8) div 9;
-      bfr^ [index] := sample;
+          sample  := (sample * 8) div 9;
+      bfr^[index] := sample;
       Inc(index);
       // bump the buffer pointer
       Inc(angle, d_angle);
@@ -686,7 +684,7 @@ procedure TfrmMain.fill_buffer_with_silence(bfr: pBuffer; var index, samples: in
   begin
     for sample := 0 to samples - 1 do
       begin
-      bfr^ [index] := 0;
+      bfr^[index] := 0;
       // store it in the caller's buffer
       Inc(index);
       // bump the buffer pointer

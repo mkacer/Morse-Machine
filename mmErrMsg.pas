@@ -16,84 +16,84 @@ function translate_mm_error(error_number: word): PChar;
   begin
     case error_number of
       mmsyserr_NoError:
-        translate_mm_error := 'no error';
+        Result := 'no error';
       mmsyserr_Error:
-        translate_mm_error := 'unspecified error';
+        Result := 'unspecified error';
       mmsyserr_BadDeviceID:
-        translate_mm_error := 'device ID out of range';
+        Result := 'device ID out of range';
       mmsyserr_NotEnabled:
-        translate_mm_error := 'driver failed enable';
+        Result := 'driver failed enable';
       mmsyserr_Allocated:
-        translate_mm_error := 'device already allocated';
+        Result := 'device already allocated';
       mmsyserr_InvalHandle:
-        translate_mm_error := 'device handle is invalid';
+        Result := 'device handle is invalid';
       mmsyserr_NoDriver:
-        translate_mm_error := 'no device driver present';
+        Result := 'no device driver present';
       mmsyserr_NoMem:
-        translate_mm_error := ' memory allocation error';
+        Result := ' memory allocation error';
       mmsyserr_NotSupported:
-        translate_mm_error := 'function isn''t supported';
+        Result := 'function isn''t supported';
       mmsyserr_BadErrNum:
-        translate_mm_error := 'error value out of range';
+        Result := 'error value out of range';
       mmsyserr_InvalFlag:
-        translate_mm_error := 'invalid flag passed';
+        Result := 'invalid flag passed';
       mmsyserr_InvalParam:
-        translate_mm_error := 'invalid parameter passed';
+        Result := 'invalid parameter passed';
       waverr_BadFormat:
-        translate_mm_error := 'unsupported wave format';
+        Result := 'unsupported wave format';
       waverr_StillPlaying:
-        translate_mm_error := 'still something playing';
+        Result := 'still something playing';
       waverr_Unprepared:
-        translate_mm_error := 'header not prepared';
+        Result := 'header not prepared';
       waverr_Sync:
-        translate_mm_error := 'device is synchronous';
+        Result := 'device is synchronous';
       midierr_Unprepared:
-        translate_mm_error := 'header not prepared';
+        Result := 'header not prepared';
       midierr_StillPlaying:
-        translate_mm_error := 'still something playing';
+        Result := 'still something playing';
       midierr_NoMap:
-        translate_mm_error := 'no current map';
+        Result := 'no current map';
       midierr_NotReady:
-        translate_mm_error := 'hardware is still busy';
+        Result := 'hardware is still busy';
       midierr_NoDevice:
-        translate_mm_error := 'port no longer connected';
+        Result := 'port no longer connected';
       midierr_InvalidSetup:
-        translate_mm_error := 'invalid setup';
-      {   midierr_LastError: translate_mm_error := 'last error in range'; }
-      {   timerr_NoError: translate_mm_error := 'no error'; }
+        Result := 'invalid setup';
       timerr_NoCanDo:
-        translate_mm_error := 'request not completed';
+        Result := 'request not completed';
       timerr_Struct:
-        translate_mm_error := 'time struct size';
-      {   joyerr_NoError: translate_mm_error := 'no error'; }
+        Result := 'time struct size';
       joyerr_Parms:
-        translate_mm_error := 'bad parameters';
+        Result := 'bad parameters';
       joyerr_NoCanDo:
-        translate_mm_error := 'request not completed';
+        Result := 'request not completed';
       joyerr_Unplugged:
-        translate_mm_error := 'joystick is unplugged';
+        Result := 'joystick is unplugged';
       mmioerr_FileNotFound:
-        translate_mm_error := 'file not found';
+        Result := 'file not found';
       mmioerr_OutOfMemory:
-        translate_mm_error := 'out of memory';
+        Result := 'out of memory';
       mmioerr_CannotOpen:
-        translate_mm_error := 'cannot open';
+        Result := 'cannot open';
       mmioerr_CannotClose:
-        translate_mm_error := 'cannot close';
+        Result := 'cannot close';
       mmioerr_CannotRead:
-        translate_mm_error := 'cannot read';
+        Result := 'cannot read';
       mmioerr_CannotWrite:
-        translate_mm_error := 'cannot write';
+        Result := 'cannot write';
       mmioerr_CannotSeek:
-        translate_mm_error := 'cannot seek';
+        Result := 'cannot seek';
       mmioerr_CannotExpand:
-        translate_mm_error := 'cannot expand file';
+        Result := 'cannot expand file';
       mmioerr_ChunkNotFound:
-        translate_mm_error := 'chunk not found';
+        Result := 'chunk not found';
       mmioerr_Unbuffered:
-        translate_mm_error := 'file is unbuffered';
+        Result := 'file is unbuffered';
+        {   midierr_LastError: Result := 'last error in range'; }
+        {   timerr_NoError: Result := 'no error'; }
+        {   joyerr_NoError: Result := 'no error'; }
       else
-        translate_mm_error := 'invalid parameter passed to error translation routine!';
+        Result := 'invalid parameter passed to error translation routine!';
       end;
   end;
 

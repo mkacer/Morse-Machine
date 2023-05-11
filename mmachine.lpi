@@ -19,7 +19,7 @@
       <AutoIncrementBuild Value="True"/>
       <MajorVersionNr Value="1"/>
       <MinorVersionNr Value="1"/>
-      <BuildNr Value="54"/>
+      <BuildNr Value="58"/>
       <CharSet Value="04B0"/>
       <Attributes pvaPreRelease="True"/>
     </VersionInfo>
@@ -36,7 +36,6 @@
             <Optimizations>
               <OptimizationLevel Value="3"/>
             </Optimizations>
-            <SmallerCode Value="True"/>
           </CodeGeneration>
           <Linking>
             <Debugging>
@@ -70,8 +69,8 @@
         <Filename Value="mmachine.lpr"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="1"/>
-        <CursorPos X="33" Y="14"/>
-        <UsageCount Value="178"/>
+        <CursorPos X="10" Y="15"/>
+        <UsageCount Value="187"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -81,51 +80,72 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="600"/>
-        <CursorPos X="48" Y="605"/>
-        <UsageCount Value="177"/>
+        <TopLine Value="552"/>
+        <CursorPos X="56" Y="566"/>
+        <UsageCount Value="186"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="codechars.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="3"/>
         <CursorPos X="62" Y="18"/>
-        <UsageCount Value="156"/>
+        <UsageCount Value="165"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="config.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="4"/>
-        <CursorPos X="50" Y="3"/>
-        <UsageCount Value="156"/>
+        <TopLine Value="80"/>
+        <CursorPos X="105" Y="13"/>
+        <UsageCount Value="165"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="mmErrMsg.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="2"/>
-        <CursorPos X="9" Y="19"/>
-        <UsageCount Value="156"/>
+        <CursorPos X="66" Y="92"/>
+        <UsageCount Value="165"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="main.lfm"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit>
+      <Unit>
+        <Filename Value="../../../../../lazarus/fpc/3.2.2/source/packages/winunits-base/src/mmsystem.pp"/>
+        <UnitName Value="MMSystem"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="984"/>
+        <CursorPos X="65" Y="1010"/>
+        <UsageCount Value="14"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../../../../../lazarus/components/lclextensions/include/qt5/uses.inc"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="39"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../../../../../lazarus/components/lclextensions/delphicompat.pas"/>
+        <UnitName Value="DelphiCompat"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="119"/>
+        <CursorPos X="2" Y="137"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../../../../../lazarus/components/lclextensions/include/win32/uses.inc"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+      </Unit>
     </Units>
-    <JumpHistory HistoryIndex="20">
-      <Position>
-        <Filename Value="mmachine.lpr"/>
-        <Caret Line="26" Column="62"/>
-      </Position>
-      <Position>
-        <Filename Value="mmErrMsg.pas"/>
-        <Caret Line="5" Column="25"/>
-      </Position>
+    <JumpHistory HistoryIndex="28">
       <Position>
         <Filename Value="main.pas"/>
         <Caret Line="10" Column="74"/>
@@ -145,10 +165,6 @@
       <Position>
         <Filename Value="main.pas"/>
         <Caret Line="290" Column="83" TopLine="270"/>
-      </Position>
-      <Position>
-        <Filename Value="mmErrMsg.pas"/>
-        <Caret Column="5" TopLine="41"/>
       </Position>
       <Position>
         <Filename Value="config.pas"/>
@@ -200,6 +216,50 @@
       <Position>
         <Filename Value="main.pas"/>
         <Caret Line="284" Column="81" TopLine="267"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="605" Column="48" TopLine="600"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="617" Column="24" TopLine="599"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="550" Column="56" TopLine="530"/>
+      </Position>
+      <Position>
+        <Filename Value="mmachine.lpr"/>
+        <Caret Line="24" Column="41"/>
+      </Position>
+      <Position>
+        <Filename Value="mmErrMsg.pas"/>
+        <Caret Line="19" Column="9" TopLine="4"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="662" Column="28" TopLine="641"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="570" Column="22" TopLine="552"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="624" Column="18" TopLine="594"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="640" Column="18" TopLine="610"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="670" Column="11" TopLine="640"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="687" Column="11" TopLine="657"/>
       </Position>
     </JumpHistory>
   </ProjectOptions>

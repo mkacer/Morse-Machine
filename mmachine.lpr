@@ -7,11 +7,15 @@ program mmachine;
 {$mode objfpc}{$H+}{$J-}
 
 uses
- {$IFDEF UNIX}{$IFDEF UseCThreads}
+ {$IFDEF UNIX}
   cthreads,
-        {$ENDIF}      {$ENDIF}
-  Interfaces, // this includes the LCL
-  Forms { add your units here },
+ {$ENDIF}
+ {$IFDEF HASAMIGA}
+  athreads,
+ {$ENDIF}
+
+  Interfaces, // this includes the LCL widgetset
+  Forms,
   main,
   config,
   codechars,

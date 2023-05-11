@@ -5,15 +5,12 @@ unit config;
 interface
 
 uses
-  Forms, Controls, Classes, SysUtils, XMLConf;
+  Classes, Controls, Forms, SysUtils, XMLConf;
 
 procedure SetConfigFileName(const filename: string);
-function GetValueFromConfigFile(const SectionName, ValueName, Default: unicodestring):
-  unicodestring;
-function GetValueFromConfigFile(const SectionName, ValueName: unicodestring;
-  Default: integer): integer;
-function GetValueFromConfigFile(const SectionName, ValueName: unicodestring;
-  Default: boolean): boolean;
+function GetValueFromConfigFile(const SectionName, ValueName, Default: unicodestring): unicodestring;
+function GetValueFromConfigFile(const SectionName, ValueName: unicodestring; Default: integer): integer;
+function GetValueFromConfigFile(const SectionName, ValueName: unicodestring; Default: boolean): boolean;
 procedure SaveValueToConfigFile(const SectionName, ValueName, Value: unicodestring);
 procedure SaveValueToConfigFile(const SectionName, ValueName: unicodestring; Value: integer);
 procedure SaveValueToConfigFile(const SectionName, ValueName: unicodestring; Value: boolean);
@@ -34,20 +31,17 @@ procedure SetConfigFileName(const filename: string);
     XMLConfig.Filename := filename;
   end;
 
-function GetValueFromConfigFile(
-  const SectionName, ValueName, Default: unicodestring): unicodestring;
+function GetValueFromConfigFile(const SectionName, ValueName, Default: unicodestring): unicodestring;
   begin
     Result := XMLConfig.GetValue(SectionName + '/' + ValueName + sValue, Default);
   end;
 
-function GetValueFromConfigFile(const SectionName, ValueName: unicodestring;
-  Default: integer): integer;
+function GetValueFromConfigFile(const SectionName, ValueName: unicodestring; Default: integer): integer;
   begin
     Result := XMLConfig.GetValue(SectionName + '/' + ValueName + sValue, Default);
   end;
 
-function GetValueFromConfigFile(const SectionName, ValueName: unicodestring;
-  Default: boolean): boolean;
+function GetValueFromConfigFile(const SectionName, ValueName: unicodestring; Default: boolean): boolean;
   begin
     Result := XMLConfig.GetValue(SectionName + '/' + ValueName + sValue, Default);
   end;
@@ -86,7 +80,8 @@ procedure GetFormPositionFromConfigFile(const SectionName, ValueName: unicodestr
       w := XMLConfig.GetValue(SectionName + '/' + ValueName + '/Width', AForm.Width);
       if w > 40 then
         AForm.Width := w;
-      AForm.Height  := XMLConfig.GetValue(SectionName + '/' + ValueName + '/Height', AForm.Height);
+      AForm.Height  := XMLConfig.GetValue(SectionName + '/' + ValueName +
+        '/Height', AForm.Height);
       end;
     Application.ProcessMessages;
     if ws = wsMaximized then
